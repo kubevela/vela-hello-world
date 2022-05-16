@@ -1,6 +1,6 @@
 FROM busybox:latest
 ENV PORT=8000
-LABEL maintainer="Chris <c@crccheck.com>"
+LABEL maintainer="Jianbo Sun <wonderflow@icloud.com>"
 
 ADD index.html /www/index.html
 

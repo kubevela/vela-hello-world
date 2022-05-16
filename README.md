@@ -4,34 +4,55 @@ This is a simple Docker image that just gives http responses on port 8000. It's
 small enough to fit on one floppy disk:
 
 ```bash
-$ docker images | grep hell
-REPOSITORY               TAG       IMAGE ID        CREATED          VIRTUAL SIZE
-crccheck/hello-world     latest    2b28c6ad8d1b    4 months ago     1.2MB
+$ docker images | grep hello-vela
+oamdev/hello-vela     latest    453425b45a21   3 minutes ago   1.24MB
 ```
 
-I made this initially because there were lots of scenarios where I wanted a
-Docker container that speaks HTTP, but every guide used images that took
-seconds to download. Armed with a tiny Docker image, I could test things in a
-fresh environment in under a second. I like faster feedback loops.
-
-**THANK YOU** to the surprisingly large number of contributors that have made
-this better for everyone over the years.
+This is forked from https://github.com/crccheck/docker-hello-world.
 
 ## Sample Usage
 
 ### Starting a web server on port 80
 
 ```bash
-$ docker run -d --rm --name web-test -p 80:8000 crccheck/hello-world
+$ docker run -d --rm --name web-test -p 80:8000 oamdev/hello-vela
 ```
 
 You can now interact with this as if it were a dumb web server:
 
 ```
 $ curl localhost
-<xmp>
-Hello World
-...snip...
+<pre>
+Hello KubeVela! Make shipping applications more enjoyable.
+
+
+                                   ,
+                                   //,
+                                   ////
+                               ./  /////*
+                             ,///  ///////
+                           ./////  ////////
+                          ///////  /////////
+                         ////////  //////////
+                       ,/////////  ///////////
+                      ,//////////  ///////////.
+                     .///////////  ////////////
+                     ////////////  ////////////.
+                    *////////////  ////////////*
+       #@@@@@@@@@@@*     ..,,***/  /////////////
+        /@@@@@@@@@@@#
+         *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&
+          .@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@.
+
+              @@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+                .&@@@*    *@@@&    ,@@@&.
+
+       _  __       _          __     __     _
+      | |/ /_   _ | |__    ___\ \   / /___ | |  __ _
+      | ' /| | | || '_ \  / _ \\ \ / // _ \| | / _` |
+      | . \| |_| || |_) ||  __/ \ V /|  __/| || (_| |
+      |_|\_\\__,_||_.__/  \___|  \_/  \___||_| \__,_|
+</pre>
 ```
 
 ```
